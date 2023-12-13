@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoE Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-site">
+        <div class="column-container">
+            <div class="column" id="character-name">Character Name</div>
+            <div class="column" id="achievements">Achievements</div>
+            <div class="column" id="podium">Podium</div>
+        </div>
+
+        <div class="footer">
+            <input type="range" id="timeline-slider" min="1" max="100" value="50" class="slider">
+        </div>
+    </div>
+
+    <div id="edit-overlay" class="overlay">
+        <!-- Edit Overlay Content -->
+        <div class="column-container">
+            <div class="column">Character Name</div>
+            <div class="column">
+                <form id="achievements-form">
+                    Level: <input type="range" min="85" max="100"><br>
+                    Atlas Progress: <input type="range" min="116" max="131"><br>
+                    <!-- Add checkboxes here -->
+                    <button type="submit">Save</button>
+                    <button type="button" onclick="closeEditOverlay()">Exit</button>
+                </form>
+            </div>
+            <div class="column">Additional Info</div>
+        </div>
+    </div>
+
+    <button onclick="openEditOverlay()">Edit</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
