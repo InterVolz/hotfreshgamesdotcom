@@ -9,30 +9,119 @@
 <body>
     <div id="main-site">
         <div class="column-container">
-            <div class="column" id="character-name">Character Name</div>
-            <div class="column" id="achievements">Achievements</div>
-            <div class="column" id="podium">Podium</div>
+            <div class="column">
+                <h2>Character Name</h2>
+                <div id="character-name"></div>
+            </div>
+            <div class="column">
+                <h2>Achievements</h2>
+                <div id="achievements"></div>
+            </div>
+            <div class="column">
+                <h2>Podium</h2>
+                <div id="podium"></div>
+            </div>
         </div>
 
         <div class="footer">
+            <label for="timeline-slider">Timeline: </label>
             <input type="range" id="timeline-slider" min="1" max="100" value="50" class="slider">
         </div>
     </div>
 
     <div id="edit-overlay" class="overlay">
-        <!-- Edit Overlay Content -->
         <div class="column-container">
-            <div class="column">Character Name</div>
             <div class="column">
+                <h3>Edit Character</h3>
                 <form id="achievements-form">
-                    Level: <input type="range" min="85" max="100"><br>
-                    Atlas Progress: <input type="range" min="116" max="131"><br>
-                    <!-- Add checkboxes here -->
+                    <label for="edit-character-name">Character Name: </label>
+                    <input type="text" id="edit-character-name"><br>
+
+                    <label for="edit-level">Level: </label>
+                    <input type="range" id="edit-level" min="85" max="100"><br>
+
+                    <label for="edit-atlas-progress">Atlas Progress: </label>
+                    <input type="range" id="edit-atlas-progress" min="116" max="131"><br>
+
+                    <div id="edit-achievements" class="achievement-grid">
+                        <div>
+                            <input type="checkbox" id="checkbox_atziri" name="checkbox_atziri">
+                            <label for="checkbox_atziri">Atziri</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_shaper" name="checkbox_shaper">
+                            <label for="checkbox_shaper">Shaper</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_elder" name="checkbox_elder">
+                            <label for="checkbox_elder">Elder</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_sirus" name="checkbox_sirus">
+                            <label for="checkbox_sirus">Sirus</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_uberatziri" name="checkbox_uberatziri">
+                            <label for="checkbox_uberatziri">Uber Atziri</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_ubershaper" name="checkbox_ubershaper">
+                            <label for="checkbox_ubershaper">Uber Shaper</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_uberelder" name="checkbox_uberelder">
+                            <label for="checkbox_uberelder">Uber Elder</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_superlab" name="checkbox_superlab">
+                            <label for="checkbox_superlab">Super Lab</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_maven" name="checkbox_maven">
+                            <label for="checkbox_maven">Maven</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_ubermaven" name="checkbox_ubermaven">
+                            <label for="checkbox_ubermaven">Uber Maven</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_searingexarch" name="checkbox_searingexarch">
+                            <label for="checkbox_searingexarch">Searing Exarch</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_eater" name="checkbox_eater">
+                            <label for="checkbox_eater">Eater Of Worlds</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_theformed" name="checkbox_theformed">
+                            <label for="checkbox_theformed">Maven Invite: The Formed</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_thetwisted" name="checkbox_thetwisted">
+                            <label for="checkbox_thetwisted">Maven Invite: The Twisted</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_theforgotten" name="checkbox_theforgotten">
+                            <label for="checkbox_theforgotten">Maven Invite: The Forgotten</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_thehidden" name="checkbox_thehidden">
+                            <label for="checkbox_thehidden">Maven Invite: The Hidden</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_elderslayers" name="checkbox_elderslayers">
+                            <label for="checkbox_elderslayers">Maven Invite: The Elderslayers</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox_thefeared" name="checkbox_thefeared">
+                            <label for="checkbox_thefeared">Maven Invite: The Feared</label>
+                        </div>
+                    </div>
+
                     <button type="submit">Save</button>
                     <button type="button" onclick="closeEditOverlay()">Exit</button>
                 </form>
             </div>
-            <div class="column">Additional Info</div>
         </div>
     </div>
 

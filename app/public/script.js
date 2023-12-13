@@ -50,8 +50,17 @@ function handleTimelineChange(event) {
 }
 
 function updateUIWithCharacterData(data) {
-    // Implement logic to update UI with the character data
-    // Example: Update character name, achievements, etc.
+    // Assuming you have divs or other elements to display character data
+    const characterNameDiv = document.getElementById('character-name');
+    const achievementsDiv = document.getElementById('achievements');
+
+    characterNameDiv.innerHTML = ''; // Clear existing data
+    achievementsDiv.innerHTML = '';  // Clear existing data
+
+    data.forEach(character => {
+        characterNameDiv.innerHTML += `<p>${character.name}</p>`;
+        // Add logic to display achievements and other character info
+    });
 }
 
 function updateUIWithTimelineData(data) {
@@ -59,14 +68,38 @@ function updateUIWithTimelineData(data) {
     // Example: Adjust podium heights, show/hide achievements, etc.
 }
 
-function openEditOverlay() {
-    // Logic to open the edit overlay
-    // Populate form fields if necessary
+function openEditOverlay(characterData) {
+    document.getElementById('edit-character-name').value = characterData.name;
+    document.getElementById('edit-level').value = characterData.level;
+    document.getElementById('edit-atlas-progress').value = characterData.atlasPoints;
+
+    document.getElementById('checkbox_atziri').checked = characterData.achievements.Atziri;
+    document.getElementById('checkbox_shaper').checked = characterData.achievements.Shaper;
+    document.getElementById('checkbox_elder').checked = characterData.achievements.Elder;
+    document.getElementById('checkbox_sirus').checked = characterData.achievements.Sirus;
+    document.getElementById('checkbox_uberatziri').checked = characterData.achievements.UberAtziri;
+    document.getElementById('checkbox_ubershaper').checked = characterData.achievements.UberShaper;
+    document.getElementById('checkbox_uberelder').checked = characterData.achievements.UberElder;
+    document.getElementById('checkbox_superlab').checked = characterData.achievements.SuperLab;
+    document.getElementById('checkbox_maven').checked = characterData.achievements.Maven;
+    document.getElementById('checkbox_ubermaven').checked = characterData.achievements.UberMaven;
+    document.getElementById('checkbox_searingexarch').checked = characterData.achievements.SearingExarch;
+    document.getElementById('checkbox_eater').checked = characterData.achievements.EaterOfWorlds;
+    document.getElementById('checkbox_theformed').checked = characterData.achievements.MavenInviteTheFormed;
+    document.getElementById('checkbox_thetwisted').checked = characterData.achievements.MavenInviteTheTwisted;
+    document.getElementById('checkbox_theforgotten').checked = characterData.achievements.MavenInviteTheForgotten;
+    document.getElementById('checkbox_thehidden').checked = characterData.achievements.MavenInviteTheHidden;
+    document.getElementById('checkbox_elderslayers').checked = characterData.achievements.MavenInviteTheElderslayers;
+    document.getElementById('checkbox_thefeared').checked = characterData.achievements.MavenInviteTheFeared;
+    
+    document.getElementById('edit-overlay').style.display = 'block';
 }
 
+
 function closeEditOverlay() {
-    // Logic to close the edit overlay
-    // Reset form fields if necessary
+    document.getElementById('edit-overlay').style.display = 'none';
+    // Reset form fields
+    document.getElementById('achievements-form').reset();
 }
 
 // Additional helper functions as needed
